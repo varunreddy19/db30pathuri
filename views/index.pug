@@ -3,17 +3,18 @@ extends layout
 block content
   h1= title
   p Varun Reddy #{title}
-  buttonn(type="button", class="btn btn-secondary" onclick="updateCount()") Press ME
 
+  button(type="button", class="btn btn-secondary", onclick="update()") Press Me for the contents
+  
   p 
-  div(id="target") Displaying contents
+  div(id="target") Display
 
   script.
     var client_count=0;
-    function updateCount(){
+    function update(){
       client_count+=1;
       
       document.getElementById("target").innerHTML="Value Now "+client_count  ;
     } 
 
-  a(href="Universities") Go to Universities Page
+  a(href="van") Go to Van Page

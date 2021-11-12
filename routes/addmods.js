@@ -11,4 +11,4 @@ var cols=Number(query.cols)
     res.render('addmods', { title: 'Add Mods',query: query });
 });
 
-module.exports = router; 
+module.exports = router;
