@@ -30,3 +30,6 @@ module.exports = router;
 
 /* GET detail van page */ 
 router.get('/detail', van_controller.van_view_one_Page); 
+
+/* GET create van page */ 
+router.get('/create', van_controller.van_create_Page); 
