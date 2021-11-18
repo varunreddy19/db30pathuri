@@ -2,7 +2,9 @@ extends layout
  
 block content 
   h1= title 
- 
+ if (toShow == null) 
+    h2 No instance to show details
+  else 
   - let vanid = toShow._id 
   - let van_type = toShow.vanType
   - let vancost = toShow.vanPrice 
