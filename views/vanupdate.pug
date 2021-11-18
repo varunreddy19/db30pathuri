@@ -2,17 +2,28 @@ extends layout
  
 block content 
   h1= title 
- 
-  form(id='VanForm', action="/resource/vans", method="POST") 
+ if (toShow == null) 
+    h2 No instance to Update 
+  else 
+  - let vanid = toShow._id 
+  - let van_type = toShow.vanType
+  - let vancost = toShow.vanPrice 
+  - let vancolour = toShow.vanColor 
+  
+  div.row(class='mb-2') 
+    div.mr-1 ID is 
+    div #{vanid} 
+  - let actionid = "/resource/vans/" + vanid 
+  form(id='VanForm', action= actionid, method="PUT") 
     div.form-group 
-        label.vanAttr(for='vanType') Van Type 
-        input#costume_type(type='text', name='vanType') 
+        label.vanAttr(for='vanType') Van type 
+        input#vanType(type='text', name='vanType', value= vanType ) 
     div.form-group 
         label.vanAttr(for='vanPrice') Van Price 
-        input#size(type='number', name='vanPrice') 
+        input#vanPrice(type='number', name='vanPrice', value= vanPrice ) 
     div.form-group 
         label.vanAttr(for='vanColor') Van color 
-        input#cost(type='text', name='vanColor') 
+        input#vanColor(type='text', name='vanColor', value= vanColor ) 
     input(type="submit") 
  
   script. 
@@ -20,15 +31,15 @@ block content
       event.preventDefault(); 
       // TODO do something here to show user that form is being submitted 
       fetch(event.target.action, { 
-        method: 'POST', 
+        method: 'PUT', 
         body: new URLSearchParams(new FormData(event.target)) // event.target is the form 
       }).then((resp) => { 
         return resp.json(); // or resp.text() or whatever the server sends 
       }).then((body) => { 
-        alert("Save succeded") 
+        alert("Update succeded") 
         // TODO handle body 
       }).catch((error) => { 
         // TODO handle error 
-        alert("Save failed " + error ) 
+        alert("Update failed " + error ) 
       }); 
-    });
+    }); 
