@@ -26,4 +26,5 @@ router.get('/vans/:id', van_controller.van_detail);
 
 // GET request for list of all van items.
 router.get('/vans', van_controller.van_view_all_Page);
+
 module.exports = router;

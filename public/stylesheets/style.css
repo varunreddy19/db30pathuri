@@ -14,3 +14,45 @@ a {
   font-style: italic;
   color:darkslateblue;
 } 
+
+#title{
+
+  color: #123456;
+
+  font-family:Arial, Helvetica, sans-serif; 
+
+}
+
+.values{
+
+  margin-right: 20px;
+
+  margin-bottom: 0;
+
+  padding: 10px;
+
+  justify-content:center;
+
+  font-weight: bold;
+
+  background-color: rgb(0, 255, 170);
+
+  border-radius: 100px;
+
+}
+
+.values:hover{
+
+  background-color:rgb(255, 0, 55);
+
+  color: black;
+
+}
+
+.paddingcustom{
+
+  padding: 10px 10px;
+
+  justify-content: space-between;
+
+}
